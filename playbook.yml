@@ -1,0 +1,10 @@
+
+---
+ - name: playbook to copy
+   hosts: demo
+   become: yes
+   tasks:
+    - name: copy file from ansible user on master to root user on slave
+      copy:
+       src: /home/ansible/jsp.war
+       dest: /root/apache-tomcat-9.0.89/webapps/jsp.war
